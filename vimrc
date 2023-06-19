@@ -1,24 +1,32 @@
-set nocompatible
-filetype plugin on
-set number
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
+filetype plugin indent on
 syntax on
+
+set background=dark
+set number
+set cursorline
+set showmatch
+set undolevels=1000
+set noerrorbells
+set nowrap
+set spelllang=en_us
 set ruler
-set modeline
-set history=100
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+
 set expandtab
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
+set copyindent
+set shiftround
+
+set nocompatible
 set backspace=indent,eol,start
 set encoding=utf-8
+
+set modeline
+set history=100
 
 noremap Y y$
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
