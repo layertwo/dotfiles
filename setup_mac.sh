@@ -23,7 +23,7 @@ brew install --cask visual-studio-code docker firefox keepassxc keepingyouawake 
 brew cleanup
 
 # """ setup git """
-cp gitconfig ~/.gitconfig
+cp .gitconfig ~/.gitconfig
 
 # """ install visidata """
 pip3 install visidata virtualenv
