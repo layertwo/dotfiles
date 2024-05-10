@@ -3,7 +3,6 @@ syntax on
 
 set background=dark
 set number
-set cursorline
 set showmatch
 set undolevels=1000
 set noerrorbells
