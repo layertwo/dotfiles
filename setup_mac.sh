@@ -13,8 +13,9 @@ xcode-select --install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
 
+
 # install packages from homebrew
-brew install ansible ansible-lint awscli cloc curl fluxcd/tap/flux git go grep htop \
+brew install ansible ansible-lint awscli cloc curl docker-buildx fluxcd/tap/flux git go grep htop \
             iproute2mac jq kubernetes-cli md5sha1sum nmap openssh openssl python3 \
             rsync screen inetutils tmux vim watch wget xz zstd zsh
 
