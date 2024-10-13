@@ -1,19 +1,15 @@
 #!/bin/bash
 
-# setup oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # """ setup homebrew """
 # install homebrew
 xcode-select --install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
 
-
 # install packages from homebrew
 brew install ansible ansible-lint awscli cloc curl docker-buildx fluxcd/tap/flux git go grep htop \
             iproute2mac jq kubernetes-cli md5sha1sum nmap openssh openssl python3 \
-            rsync screen inetutils tmux vim watch wget xz zstd zsh
+            rsync screen sops inetutils tmux vim watch wget xz zstd zsh
 
 
 # install packages from homebrew cask
@@ -22,6 +18,11 @@ brew install --cask visual-studio-code discord docker firefox keepassxc keepingy
 
 # cleanup
 brew cleanup
+
+# """ setup zsh """
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp .zshrc ~/.zshrc
 
 # """ setup git """
 cp .gitconfig ~/.gitconfig
