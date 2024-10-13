@@ -9,7 +9,7 @@ brew doctor
 # install packages from homebrew
 brew install ansible ansible-lint awscli cloc curl docker-buildx fluxcd/tap/flux git go grep htop \
             iproute2mac jq kubernetes-cli md5sha1sum nmap openssh openssl python3 \
-            rsync screen sops inetutils tmux vim watch wget xz zstd zsh
+            rsync screen sops inetutils tmux neovim watch wget xz zstd zsh
 
 
 # install packages from homebrew cask
@@ -30,5 +30,5 @@ cp .gitconfig ~/.gitconfig
 # """ install visidata """
 pip3 install visidata virtualenv
 
-# """ setup vim """
-./setup_vim.sh
+# """ setup neovim """
+./setup_neovim.sh
