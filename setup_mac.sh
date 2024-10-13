@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# """ setup bash """
-cp ~/.bash_profile ~/.bash_profile.bak
-cp bash_profile ~/.bash_profile
-
 # setup oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
