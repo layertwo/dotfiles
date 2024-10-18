@@ -52,12 +52,12 @@ vim.keymap.set("n", "<leader>lt", ":set nolist<CR>", { desc = "Toggle List" })
 
 -- Functions
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = {"*.c", "*.cpp", "*.h", "*.py", "*.rb", "*.go", "*.sh", "*.txt", "*.lua", "*.ts"},
-   callback = function()
+    pattern = {"*.c", "*.cpp", "*.h", "*.py", "*.rb", "*.go", "*.sh", "*.txt", "*.lua", "*.ts"},
+    callback = function()
         vim.cmd("retab")
-        vim.cmd("s/\\s\\+$//e")
    end
 })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = "*", command = "s/\\s\\+$//e" })
 
 -- Other settings
 vim.opt.cursorline = true
