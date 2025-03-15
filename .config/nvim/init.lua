@@ -57,7 +57,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         vim.cmd("retab")
    end
 })
-vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = "*", command = "s/\\s\\+$//e" })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.cmd([[%s/\s\+$//e]])
+  end,
+})
 
 -- Other settings
 vim.opt.cursorline = true
