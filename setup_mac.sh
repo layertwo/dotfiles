@@ -7,13 +7,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/inst
 brew doctor
 
 # install packages from homebrew
-brew install ansible ansible-lint awscli cdktf cloc curl docker-buildx fluxcd/tap/flux git go grep htop \
+brew install ansible ansible-lint awscli cdktf cloc curl podman fluxcd/tap/flux git go grep htop \
             iproute2mac jq kubernetes-cli md5sha1sum nmap openssh openssl opentofu python3 \
             rsync screen sops inetutils tmux neovim watch wget xz zstd zsh zsh-autosuggestions
 
 
 # install packages from homebrew cask
-brew install --cask visual-studio-code discord docker firefox keepassxc keepingyouawake iterm2 \
+brew install --cask visual-studio-code discord podman-desktop firefox keepassxc keepingyouawake ghostty \
             standard-notes protonvpn the-unarchiver tresorit vlc wireshark signal --force
 
 # cleanup
