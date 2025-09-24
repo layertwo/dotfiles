@@ -8,7 +8,7 @@ brew doctor
 
 # install packages from homebrew
 brew install ansible ansible-lint awscli cdktf cloc curl podman fluxcd/tap/flux git go grep htop \
-            iproute2mac jq kubernetes-cli md5sha1sum nmap openssh openssl opentofu python3 \
+            iproute2mac jq kubernetes-cli md5sha1sum nmap obsidian openssh openssl opentofu python3 \
             rsync screen sops inetutils tmux neovim watch wget xz zstd zsh zsh-autosuggestions
 
 
