@@ -20,14 +20,16 @@ fi
 brew doctor
 
 # install packages from homebrew
-brew install ansible ansible-lint awscli cdktf cloc curl podman fluxcd/tap/flux git go grep htop \
-            iproute2mac jq kubernetes-cli md5sha1sum nmap obsidian openssh openssl opentofu python3 \
-            rsync screen sops inetutils tmux neovim watch wget xz zstd zsh zsh-autosuggestions
+brew install ansible ansible-lint awscli cdktf cloc curl fluxcd/tap/flux git go grep htop \
+            inetutils iproute2mac jq kubernetes-cli md5sha1sum neovim nmap obsidian openssh \
+            openssl opentofu podman python3 rsync screen sops tmux virtualenv visidata watch \
+            wget xz zsh zsh-autosuggestions zstd
 
 
 # install packages from homebrew cask
-brew install --cask visual-studio-code discord podman-desktop firefox keepassxc keepingyouawake ghostty \
-            standard-notes protonvpn the-unarchiver tresorit vlc wireshark signal --force
+brew install --cask discord firefox ghostty keepassxc keepingyouawake podman-desktop \
+            protonvpn signal standard-notes the-unarchiver tresorit visual-studio-code \
+            vlc wireshark --force
 
 # cleanup
 brew cleanup
@@ -70,10 +72,6 @@ else
     cp .gitconfig ~/.gitconfig
     echo "Copied .gitconfig"
 fi
-
-# """ install visidata """
-echo "Installing/updating Python packages (visidata, virtualenv)..."
-pip3 install --upgrade visidata virtualenv
 
 # """ setup neovim """
 ./setup_neovim.sh
