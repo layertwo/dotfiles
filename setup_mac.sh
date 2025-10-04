@@ -1,9 +1,22 @@
 #!/bin/bash
 
 # """ setup homebrew """
+# install xcode command line tools
+if xcode-select -p &> /dev/null; then
+    echo "Xcode Command Line Tools already installed, skipping..."
+else
+    echo "Installing Xcode Command Line Tools..."
+    xcode-select --install
+fi
+
 # install homebrew
-xcode-select --install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if command -v brew &> /dev/null; then
+    echo "Homebrew already installed, skipping installation..."
+else
+    echo "Installing Homebrew..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 brew doctor
 
 # install packages from homebrew
@@ -21,14 +34,46 @@ brew cleanup
 
 # """ setup zsh """
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp .zshrc ~/.zshrc
+if [ -d "$HOME/.oh-my-zsh" ]; then
+    echo "oh-my-zsh already installed, skipping..."
+else
+    echo "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+# copy .zshrc
+if [ -f "$HOME/.zshrc" ]; then
+    if ! cmp -s .zshrc "$HOME/.zshrc"; then
+        echo "Backing up existing .zshrc to .zshrc.backup..."
+        cp "$HOME/.zshrc" "$HOME/.zshrc.backup"
+        cp .zshrc ~/.zshrc
+        echo "Updated .zshrc"
+    else
+        echo ".zshrc already up to date, skipping..."
+    fi
+else
+    cp .zshrc ~/.zshrc
+    echo "Copied .zshrc"
+fi
 
 # """ setup git """
-cp .gitconfig ~/.gitconfig
+if [ -f "$HOME/.gitconfig" ]; then
+    if ! cmp -s .gitconfig "$HOME/.gitconfig"; then
+        echo "Backing up existing .gitconfig to .gitconfig.backup..."
+        cp "$HOME/.gitconfig" "$HOME/.gitconfig.backup"
+        cp .gitconfig ~/.gitconfig
+        echo "Updated .gitconfig"
+    else
+        echo ".gitconfig already up to date, skipping..."
+    fi
+else
+    cp .gitconfig ~/.gitconfig
+    echo "Copied .gitconfig"
+fi
 
 # """ install visidata """
-pip3 install visidata virtualenv
+echo "Installing/updating Python packages (visidata, virtualenv)..."
+pip3 install --upgrade visidata virtualenv
 
 # """ setup neovim """
 ./setup_neovim.sh
