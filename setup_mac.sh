@@ -27,8 +27,8 @@ brew install ansible ansible-lint awscli cdktf cloc curl fluxcd/tap/flux git go 
 
 
 # install packages from homebrew cask
-brew install --cask discord firefox ghostty keepassxc keepingyouawake podman-desktop \
-            protonvpn signal standard-notes the-unarchiver tresorit visual-studio-code \
+brew install --cask discord waterfox ghostty keepassxc keepingyouawake podman-desktop \
+            proton-drive protonvpn signal obsidian the-unarchiver visual-studio-code \
             vlc wireshark --force
 
 # cleanup
