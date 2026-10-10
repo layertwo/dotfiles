@@ -22,7 +22,7 @@ brew doctor
 # install packages from homebrew
 brew install ansible ansible-lint awscli cdktf cloc curl fluxcd/tap/flux git go grep htop \
             inetutils iproute2mac jq kubernetes-cli md5sha1sum neovim nmap obsidian openssh \
-            openssl opentofu podman python3 rsync screen sops tmux virtualenv visidata watch \
+            openssl opencode podman python3 rsync screen sops tmux virtualenv visidata watch \
             wget xz zsh zsh-autosuggestions zstd
 
 
